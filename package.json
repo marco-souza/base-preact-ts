@@ -1,0 +1,13 @@
+{
+  "name": "base-react-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Marco Antônio <ma.souza.junior@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "preact": "^8.2.9",
+    "ts-loader": "^4.2.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.7.0"
+  }
+}
