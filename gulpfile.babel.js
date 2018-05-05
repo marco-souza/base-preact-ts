@@ -32,8 +32,8 @@ const statsInfo = {
 const bundleDoneCalled = {};
 
 /****************************************************************
-* Clean Tasks : remove destination folders
-****************************************************************/
+ * Clean Tasks : remove destination folders
+ ****************************************************************/
 gulp.task("clean", function () {
     return del.sync([
         filepaths.dest
@@ -41,8 +41,8 @@ gulp.task("clean", function () {
 });
 
 /****************************************************************
-* Assets Task : copy assets to dist
-****************************************************************/
+ * Assets Task : copy assets to dist
+ ****************************************************************/
 gulp.task("assets:fonts", function () {
     return gulp.src(filepaths.src.assets.fonts)
         .pipe(gulp.dest(filepaths.dest + "/assets/fonts"));
@@ -59,30 +59,36 @@ gulp.task("assets", [
 ]);
 
 /****************************************************************
-* i18n Task : compile i18n yaml setups
-****************************************************************/
+ * i18n Task : compile i18n yaml setups
+ ****************************************************************/
 gulp.task("i18n", function () {
     return gulp.src(filepaths.src.i18n)
-        .pipe(yaml({ space: 4 }))
+        .pipe(yaml({
+            space: 4
+        }))
         .pipe(jsonmin())
         .pipe(gulp.dest(filepaths.dest + "/assets/i18n"));
 });
 
 gulp.task("i18n:dev", function () {
     return gulp.src(filepaths.src.i18n)
-        .pipe(yaml({ space: 4 }))
+        .pipe(yaml({
+            space: 4
+        }))
         .pipe(gulp.dest(filepaths.dest + "/assets/i18n"));
 });
 
 /****************************************************************
-* Pug Task : compile pug templates
-****************************************************************/
+ * Pug Task : compile pug templates
+ ****************************************************************/
 gulp.task("pug", function () {
     return gulp.src(filepaths.src.html)
         .pipe(pug({
             locals: config.webinfo
         }))
-        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
         .pipe(gulp.dest(filepaths.dest));
 });
 gulp.task("pug:dev", function () {
@@ -94,8 +100,8 @@ gulp.task("pug:dev", function () {
 });
 
 /****************************************************************
-* Bundle Tasks : bundle all ts files into one
-****************************************************************/
+ * Bundle Tasks : bundle all ts files into one
+ ****************************************************************/
 gulp.task("bundle", function (done) {
     const webpackConfig = require("./webpack/prod.config").default;
 
@@ -133,6 +139,7 @@ gulp.task("bundle:dev", function () {
                 webpackHotMiddleware(bundler)
             ]
         },
+        files: [path.join(filepaths.dest, '**')]
     };
 
     // Checkout this tutorials on webpack+gulp+hot_reload
@@ -149,8 +156,8 @@ gulp.task("bundle:dev", function () {
 });
 
 /****************************************************************
-* PRODUCTION TASK
-****************************************************************/
+ * PRODUCTION TASK
+ ****************************************************************/
 gulp.task("production", [
     "pug",
     "i18n",
@@ -158,8 +165,8 @@ gulp.task("production", [
 ]);
 
 /****************************************************************
-* DEVELOPMENT TASK
-****************************************************************/
+ * DEVELOPMENT TASK
+ ****************************************************************/
 gulp.task("development", [
     "pug:dev",
     "i18n:dev",
@@ -187,8 +194,8 @@ gulp.task("development", [
 });
 
 /****************************************************************
-* DEFAULT TASK : Choose task by NODE_ENV
-****************************************************************/
+ * DEFAULT TASK : Choose task by NODE_ENV
+ ****************************************************************/
 gulp.task("default", [
     "clean",
     "assets",
