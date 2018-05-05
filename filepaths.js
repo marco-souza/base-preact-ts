@@ -11,9 +11,11 @@ module.exports = {
           "./src/**/*.tsx",
           "./src/**/*.ts"
         ],
-        assets: [
-            "./src/assets/icons/**/*"
-        ],
+        assets: {
+            images: "./src/assets/images/**/*",
+            fonts: "./src/assets/fonts/**/*",
+            i18n: "./src/assets/i18n/**/*"
+        },
         i18n: [ "./src/assets/i18n/**/*" ]
     },
 

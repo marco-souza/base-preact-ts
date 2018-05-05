@@ -1,0 +1,24 @@
+formats:
+  datetime: YYYY-MM-DD HH:mm
+  date: YYYY-MM-DD
+  time: HH:mm
+
+routePaths:
+  app: /
+  app.home: /
+  app.signin: /signin
+
+dictionary:
+  _SIGNIN_TITLE_: Signin
+  _HOME_TITLE_: Home
+  _HOME_SIGNIN_LINK_: Go to Signin
+  _HOME_MAKE_API_REQUEST_: Make Api Request
+  _PAGE_LOADING_: Loading ...
+  _EMAIL_FIELD_LABEL_: email
+  _EMAIL_FIELD_PLACEHOLDER_: Chucknorris@Godmail.com
+  _FIELD_ERROR_REQUIRED_: field required
+  _PASSWORD_FIELD_LABEL_: password
+  _PASSWORD_FIELD_PLACEHOLDER_: Password
+  _FIELD_ERROR_PASSWORD_: Invalid password
+  _FIELD_ERROR_EMAIL_: Invalid email
+  _SEND_: Signin

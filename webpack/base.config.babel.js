@@ -7,6 +7,9 @@ import filepaths from "../filepaths";
 const baseConfig = {
   entry: {
     main: [ filepaths.src.index_js ],
+    vendor: [
+      'preact'
+    ]
   },
   output: {
     path: filepaths.dest + "/assets/",

@@ -39,6 +39,41 @@ gulp.task("clean", function () {
         filepaths.dest
     ]);
 });
+
+/****************************************************************
+* Assets Task : copy assets to dist
+****************************************************************/
+gulp.task("assets:fonts", function () {
+    return gulp.src(filepaths.src.assets.fonts)
+        .pipe(gulp.dest(filepaths.dest + "/assets/fonts"));
+});
+
+gulp.task("assets:images", function () {
+    return gulp.src(filepaths.src.assets.images)
+        .pipe(gulp.dest(filepaths.dest + "/assets/images"));
+});
+
+gulp.task("assets", [
+    "assets:fonts",
+    "assets:images"
+]);
+
+/****************************************************************
+* i18n Task : compile i18n yaml setups
+****************************************************************/
+gulp.task("i18n", function () {
+    return gulp.src(filepaths.src.i18n)
+        .pipe(yaml({ space: 4 }))
+        .pipe(jsonmin())
+        .pipe(gulp.dest(filepaths.dest + "/assets/i18n"));
+});
+
+gulp.task("i18n:dev", function () {
+    return gulp.src(filepaths.src.i18n)
+        .pipe(yaml({ space: 4 }))
+        .pipe(gulp.dest(filepaths.dest + "/assets/i18n"));
+});
+
 /****************************************************************
 * Pug Task : compile pug templates
 ****************************************************************/
@@ -50,7 +85,6 @@ gulp.task("pug", function () {
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest(filepaths.dest));
 });
-
 gulp.task("pug:dev", function () {
     return gulp.src(filepaths.src.html)
         .pipe(pug({
@@ -119,6 +153,7 @@ gulp.task("bundle:dev", function () {
 ****************************************************************/
 gulp.task("production", [
     "pug",
+    "i18n",
     "bundle"
 ]);
 
@@ -127,10 +162,26 @@ gulp.task("production", [
 ****************************************************************/
 gulp.task("development", [
     "pug:dev",
+    "i18n:dev",
     "bundle:dev"
 ], function () {
     gulp.watch(filepaths.src.html, [
         "pug:dev",
+        () => browserSync.reload()
+    ]);
+
+    gulp.watch(filepaths.src.assets.fonts, [
+        "assets:fonts",
+        () => browserSync.reload()
+    ]);
+
+    gulp.watch(filepaths.src.assets.images, [
+        "assets:images",
+        () => browserSync.reload()
+    ]);
+
+    gulp.watch(filepaths.src.i18n, [
+        "i18n:dev",
         () => browserSync.reload()
     ]);
 });
@@ -140,6 +191,6 @@ gulp.task("development", [
 ****************************************************************/
 gulp.task("default", [
     "clean",
-    "pug",
+    "assets",
     process.env.NODE_ENV || "production"
 ]);

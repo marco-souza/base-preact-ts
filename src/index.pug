@@ -2,21 +2,25 @@ doctype html
 
 html(lang="en")
   head
-    //- link(rel="stylesheet" type="text/css" href="assets/fonts/icomoon/style.css")
+    link(rel="stylesheet" type="text/css" href="assets/fonts/icomoon/style.css")
 
-    //- style.
-    //-   @font-face {
-    //-     font-family: "ProximaNova";
-    //-     font-style: normal;
-    //-     src: url("assets/fonts/ProximaNova/ProximaNova-Light-webfont.woff") format('woff');
-    //-   }
+    style.
+      @font-face {
+        font-family: "ProximaNova";
+        font-style: normal;
+        src: url("assets/fonts/ProximaNova/ProximaNova-Light-webfont.woff") format('woff');
+      }
 
-    //-   @font-face {
-    //-     font-family: "ProximaNova";
-    //-     src: url("assets/fonts/ProximaNova/ProximaNova-Reg-webfont.woff") format('woff');
-    //-     font-weight: bold;
-    //-   }
-    title(#{title})
+      @font-face {
+        font-family: "ProximaNova";
+        src: url("assets/fonts/ProximaNova/ProximaNova-Reg-webfont.woff") format('woff');
+        font-weight: bold;
+      }
+
+      * {
+        font-family: "ProximaNova"
+      }
+    title #{title}
   body
     div#main
 
