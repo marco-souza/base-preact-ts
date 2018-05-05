@@ -29,7 +29,7 @@ const baseConfig = {
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        loaders: ['ts-loader']
+        loaders: ['awesome-typescript-loader']
       },
 
       // Images
@@ -70,7 +70,7 @@ const baseConfig = {
       path.resolve(__dirname, "../node_modules"),
       // path.resolve(__dirname, "../darch/node_modules"),
     ],
-    extensions: [ ".ts", ".tsx", ".png", ".jpg" ]
+    extensions: [ ".js", ".ts", ".tsx", ".png", ".jpg", ".css" ]
   },
   plugins: [
     new webpack.EnvironmentPlugin([
