@@ -8,10 +8,6 @@
     // "checkJs": true,                       /* Report errors in .js files. */
     "jsx": "react",                           /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
     "jsxFactory": "h",
-    "include": [
-      "./src/**/*.tsx",
-      "./src/**/*.ts",
-    ],
     // "declaration": true,                   /* Generates corresponding '.d.ts' file. */
     "sourceMap": true,                        /* Generates corresponding '.map' file. */
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
@@ -58,5 +54,9 @@
     /* Experimental Options */
     // "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
-  }
+  },
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ]
 }
