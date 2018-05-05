@@ -4,15 +4,26 @@
   "main": "index.js",
   "author": "Marco Antônio <ma.souza.junior@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=development yarn gulp",
+    "start:prod": "NODE_ENV=production yarn gulp"
+  },
   "dependencies": {
+    "common-config": "^0.1.0",
+    "lodash": "^4.17.10",
+    "preact": "^8.2.9",
+    "webpack-hot-client": "^2.2.2"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.0.0",
     "babel": "^6.23.0",
+    "babel-loader": "^7.1.4",
     "babel-plugin-autobind-class-methods": "^5.0.1",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "browser-sync": "^2.24.4",
-    "common-config": "^0.1.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-htmlmin": "^4.0.0",
@@ -20,11 +31,6 @@
     "gulp-pug": "^4.0.1",
     "gulp-util": "^3.0.8",
     "gulp-yaml": "^2.0.1",
-    "lodash": "^4.17.10",
-    "preact": "^8.2.9",
-    "react": "^16.3.2",
-    "react-hot-loader": "^4.1.2",
-    "ts-loader": "^4.2.0",
     "tslint": "^5.10.0",
     "tslint-loader": "^3.6.0",
     "typescript": "^2.8.3",
@@ -32,11 +38,9 @@
     "url-loader": "^1.0.1",
     "virtual-module-webpack-plugin": "^0.4.0",
     "webpack": "^4.7.0",
+    "webpack-cli": "^2.1.2",
     "webpack-dev-middleware": "^3.1.3",
     "webpack-dev-server": "^3.1.4",
     "webpack-hot-middleware": "^2.22.1"
-  },
-  "devDependencies": {
-    "webpack-cli": "^2.1.2"
   }
 }
