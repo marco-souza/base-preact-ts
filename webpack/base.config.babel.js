@@ -16,12 +16,48 @@ const baseConfig = {
   },
   module: {
     rules: [
+
       // Typescript
+      {
+        test: /\.tsx?$/,
+        enforce: "pre",
+        loader: 'tslint-loader'
+      },
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         loaders: ['ts-loader']
       },
+
+      // Images
+      {
+        test: /\.(png|jpg)$/,
+        use: [
+            {
+                loader: "url-loader", options: {
+                    limit: 8192,
+                    //name: "images/[sha512:hash:base64:7].[ext]",
+                    name: "images/[name].[ext]",
+                    publicPath: "/assets/"
+                }
+            }
+        ]
+      },
+
+      //Fonts
+      {
+        test: /\.(png|jpg)$/,
+        use: [
+            {
+                loader: "url-loader", options: {
+                    limit: 8192,
+                    //name: "images/[sha512:hash:base64:7].[ext]",
+                    name: "images/[name].[ext]",
+                    publicPath: "/assets/"
+                }
+            }
+        ]
+      }
     ]
   },
   resolve: {
