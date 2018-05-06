@@ -1,14 +1,5 @@
-import { h } from 'preact';
+/* global module */
+import { h } from "preact";
+import Pages from "./pages"
 
-export interface Props {
-  value?: string,
-  optionalValue?: string
-}
-
-const SomeFunctionalComponent = ({ value, optionalValue }: Props) =>(
-  <div>
-    hello {value} {optionalValue}
-  </div>
-);
-
-export default SomeFunctionalComponent;
+export default Pages;

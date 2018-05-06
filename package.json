@@ -9,12 +9,15 @@
     "start:prod": "NODE_ENV=production yarn gulp"
   },
   "dependencies": {
-    "common-config": "^0.1.0",
+    "common-config": "https://github.com/nosebit/common-config.git",
     "lodash": "^4.17.10",
-    "preact": "^8.2.9",
-    "webpack-hot-client": "^2.2.2"
+    "preact": "^8.2.9"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-decorators": "^7.0.0-beta.46",
+    "webpack-hot-client": "^2.2.2",
+    "@babel/plugin-syntax-jsx": "^7.0.0-beta.46",
+    "@babel/plugin-syntax-typescript": "^7.0.0-beta.46",
     "awesome-typescript-loader": "^5.0.0",
     "babel": "^6.23.0",
     "babel-loader": "^7.1.4",
@@ -31,6 +34,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-util": "^3.0.8",
     "gulp-yaml": "^2.0.1",
+    "react-hot-loader": "^4.1.2",
     "tslint": "^5.10.0",
     "tslint-loader": "^3.6.0",
     "typescript": "^2.8.3",
