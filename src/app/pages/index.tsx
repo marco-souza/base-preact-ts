@@ -1,12 +1,9 @@
 import { h } from "preact";
-// import { hot } from "react-hot-loader";
 
-
-const pages = (
-  {name}: { name: string }
+const Pages = (
+  { name }: { name: string }
 ) => (
-  <div>Hi man {name}</div>
+  <div>Hi {name}</div>
 );
 
-export default pages;
-// export default hot(global)(pages);
+export default Pages;

@@ -27,7 +27,7 @@ function bootstrap() {
 if (module.hot) {
     module.hot.accept();
     module.hot.accept('./app/', bootstrap);
-  }
+}
 
 
 /****************************************************************
