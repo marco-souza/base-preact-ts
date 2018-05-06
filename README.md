@@ -2,5 +2,8 @@
 
 ## TODO
 
-- [ ] Hot reload (5)
+- [X] Hot reload (5)
+- [ ] Jss + UiKit 3 (3)
+- [ ] Jest + enzyme (5)
+- [ ] Preact routes (3)
 - [ ] Redux + ducks (5)
