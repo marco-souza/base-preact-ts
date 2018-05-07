@@ -48,6 +48,11 @@ gulp.task("assets:fonts", function () {
         .pipe(gulp.dest(filepaths.dest + "/assets/fonts"));
 });
 
+gulp.task("assets:libs", function () {
+    return gulp.src(filepaths.src.assets.libs)
+        .pipe(gulp.dest(filepaths.dest + "/assets/libs"));
+});
+
 gulp.task("assets:images", function () {
     return gulp.src(filepaths.src.assets.images)
         .pipe(gulp.dest(filepaths.dest + "/assets/images"));
@@ -55,6 +60,7 @@ gulp.task("assets:images", function () {
 
 gulp.task("assets", [
     "assets:fonts",
+    "assets:libs",
     "assets:images"
 ]);
 
@@ -179,6 +185,11 @@ gulp.task("development", [
 
     gulp.watch(filepaths.src.assets.fonts, [
         "assets:fonts",
+        () => browserSync.reload()
+    ]);
+
+    gulp.watch(filepaths.src.assets.libs, [
+        "assets:libs",
         () => browserSync.reload()
     ]);
 

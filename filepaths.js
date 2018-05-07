@@ -14,6 +14,7 @@ module.exports = {
         assets: {
             images: "./src/assets/images/**/*",
             fonts: "./src/assets/fonts/**/*",
+            libs: "./src/assets/libs/**/*",
             i18n: "./src/assets/i18n/**/*"
         },
         i18n: [ "./src/assets/i18n/**/*" ]
