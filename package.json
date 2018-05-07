@@ -9,6 +9,7 @@
     "start:prod": "NODE_ENV=production yarn gulp"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.108",
     "common-config": "https://github.com/nosebit/common-config.git",
     "lodash": "^4.17.10",
     "preact": "^8.2.9"
@@ -38,7 +39,6 @@
     "tslint": "^5.10.0",
     "tslint-loader": "^3.6.0",
     "typescript": "^2.8.3",
-    "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
     "virtual-module-webpack-plugin": "^0.4.0",
     "webpack": "^4.7.0",

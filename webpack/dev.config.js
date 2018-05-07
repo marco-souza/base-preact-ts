@@ -11,8 +11,8 @@ const devConfig = lodash.merge({}, baseConfig, {
           baseConfig.entry.main[0],
         ]
     }),
-    mode: "development",
     watch: true,
+    mode: "development",
     devtool: "inline-source-map",
     plugins: baseConfig.plugins.concat([
         new webpack.NamedModulesPlugin(),

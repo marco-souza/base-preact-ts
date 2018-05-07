@@ -1,12 +1,26 @@
 import lodash from "lodash";
-import UglifyJsPlugin from "uglifyjs-webpack-plugin";
+import webpack from "webpack";
 import baseConfig from "./base.config.babel";
 
 // Merge with base config
 const prodConfig = lodash.merge({}, baseConfig, {
-    plugins: baseConfig.plugins.concat([
-        new UglifyJsPlugin()
-    ])
+    optimization: {
+        // minimize code
+        minimize: true,
+
+        // Old CommonsChunkPlugin for webpack < 4
+        // https://github.com/webpack/webpack/issues/6357
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: "vendor",
+                    name: "vendor",
+                    filename: "vendor.js",
+                    chunks: "initial",
+                }
+            }
+        }
+    }
 });
 
 // Export config
