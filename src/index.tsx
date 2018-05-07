@@ -11,6 +11,14 @@ declare var require: any;
  */
 function bootstrap() {
     const App = require('./app').default;
+    const props = {
+        names: [
+            "Abel",
+            "Bread",
+            "Chinch",
+            "Alice",
+        ]
+    }
 
     const renderMainRoute = (mainRoute: ComponentChild) => {
         const element = document.getElementById("main")
@@ -20,7 +28,7 @@ function bootstrap() {
         }
     };
 
-    renderMainRoute(<App name="djow" />);
+    renderMainRoute(<App {...props} />);
 }
 
 // Set up HMR re-rendering.
