@@ -3,7 +3,7 @@
 ## TODO
 
 - [X] Hot reload (5)
-- [X] Jss (3)
+- [X] Jss (3) - using `preact-jss`
 - [ ] UiKit 3 (3)
 - [ ] Jest + enzyme (5)
 - [ ] Preact routes (3)

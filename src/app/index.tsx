@@ -1,7 +1,3 @@
-import Pages from "./pages"
-import useSheet from "preact-jss";
+import Page from "./page";
 
-// @useSheet(styles)
-class Composed extends Pages {}
-
-export default Composed;
+export default Page;

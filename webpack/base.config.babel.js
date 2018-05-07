@@ -8,8 +8,10 @@ const baseConfig = {
   entry: {
     main: [ filepaths.src.index_js ],
     vendor: [
+      'jss',
       'lodash',
       'preact',
+      'preact-jss',
     ]
   },
   output: {

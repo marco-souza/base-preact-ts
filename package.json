@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.108",
     "common-config": "https://github.com/nosebit/common-config.git",
+    "jss": "^9.8.1",
     "lodash": "^4.17.10",
     "preact": "^8.2.9",
     "preact-jss": "^1.0.0"
