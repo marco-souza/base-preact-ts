@@ -12,7 +12,8 @@
     "@types/lodash": "^4.14.108",
     "common-config": "https://github.com/nosebit/common-config.git",
     "lodash": "^4.17.10",
-    "preact": "^8.2.9"
+    "preact": "^8.2.9",
+    "preact-jss": "^1.0.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-decorators": "^7.0.0-beta.46",
