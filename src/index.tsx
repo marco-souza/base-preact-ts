@@ -1,4 +1,5 @@
-import { h, render, ComponentChild } from 'preact';
+import React from 'react';
+import { render } from 'react-dom';
 
 // Use global vars
 declare var module: any;
@@ -20,12 +21,9 @@ function bootstrap() {
         ]
     }
 
-    const renderMainRoute = (mainRoute: ComponentChild) => {
-        const element = document.getElementById("main")
-        if (element) {
-            element.innerHTML = ''; // Clean previous rendered elements
-            render(mainRoute, element);
-        }
+    const renderMainRoute = (mainRoute) => {
+        const element = document.getElementById("main");
+        render(mainRoute, element);
     };
 
     renderMainRoute(<App {...props} />);

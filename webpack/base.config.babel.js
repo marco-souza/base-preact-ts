@@ -10,8 +10,9 @@ const baseConfig = {
     vendor: [
       'jss',
       'lodash',
-      'preact',
-      'preact-jss',
+      'react',
+      'react-dom',
+      'react-jss',
     ]
   },
   output: {

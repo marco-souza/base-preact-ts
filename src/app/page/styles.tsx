@@ -1,7 +1,7 @@
 const styles = {
   title: {
-    "color": "blue",
-    "font-size": "50px",
+    color: "blue",
+    fontSize: 50,
   }
 }
 

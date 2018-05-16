@@ -1,4 +1,4 @@
-import { h, Component } from "preact";
+import React, { Component } from "react";
 import { sample } from "lodash";
 
 interface Props {
@@ -7,11 +7,13 @@ interface Props {
     classes: { title: string }
   }
 }
-class Pages extends Component<Props, {}> {
-  render({ names, sheet: { classes } }: Props) {
+class Pages extends React.Component<Props> {
+  render() {
+    const { names } = this.props;
+
     return (
-      <div class={`uk-label`}>
-        Hi {sample(names)}
+      <div className={`uk-label`}>
+        hi {sample(names)}
 
         <span uk-icon="icon: check"></span>
         <a href="" uk-icon="icon: heart"></a>

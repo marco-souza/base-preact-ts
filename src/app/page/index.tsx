@@ -1,8 +1,8 @@
 import Component from "./component";
 import styles from "./styles";
-import useSheet from "preact-jss";
+import injectSheet from 'react-jss';
 
-@useSheet(styles)
+@injectSheet(styles)
 class Pages extends Component {}
 
 export default Pages;
