@@ -1,0 +1,23 @@
+image: node:9
+
+before_script:
+  - npm config set prefix '~/.npm-global'
+  - export NPM_GLOBAL="${HOME}/.npm-global"
+  - export PATH="$NPM_GLOBAL/bin:$PATH"
+  - npm i -g yarn
+
+cache:
+  paths:
+  - node_modules/
+
+pages:
+  stage: deploy
+  script:
+  - yarn
+  - yarn start:prod
+  - mv dist public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
